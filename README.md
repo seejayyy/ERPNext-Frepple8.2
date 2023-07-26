@@ -128,7 +128,7 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
     - If you face `no such container` error, try with `docker logs project1-site-creator_1 -f` or `docker logs project1_site-creator_1 -f`.
   
 
-7. After the `<project_name>-site-creator-1` container display `Scheduler is disabled`,To update some of the files `cd customization` (currently updated; Sales Order, Delivery Stop, Job Card), use this command:
+7. After the `<project_name>-site-creator-1` container display `Scheduler is disabled`, To update some of the files `cd customization` (currently updated; Sales Order, Delivery Stop, Job Card), use this command:
 
     - sales_order file: `docker cp erpnext\selling\doctype\sales_order\sales_order.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order`
 
@@ -140,7 +140,7 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
     - Replace <project_name> to the same project name as in step 4.
     - For example, `docker cp erpnext\selling\doctype\sales_order\sales_order.json project1-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order`
 
-8. Now login to `<project_name>-erpnext-python-1` container. Use `docker exec -it --user root <project_name>-erpnext-python-1 /bin/bash` to login into this container as a root user.
+8. Now get back to the root directory by running `cd ..`. Now login to `<project_name>-erpnext-python-1` container. Use `docker exec -it --user root <project_name>-erpnext-python-1 /bin/bash` to login into this container as a root user.
     
     Note:
     - Replace `<project_name>` to the same project name selected in step 4.
