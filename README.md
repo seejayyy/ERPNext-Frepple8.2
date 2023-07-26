@@ -126,8 +126,24 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
     - Replace `<project_name>` to the same project name as in step 4.
     - For example, `docker logs project1-site-creator-1 -f`.
     - If you face `no such container` error, try with `docker logs project1-site-creator_1 -f` or `docker logs project1_site-creator_1 -f`.
+  
 
-7. After the `<project_name>-site-creator-1` container display `Scheduler is disabled`, login to `<project_name>-erpnext-python-1` container. Use `docker exec -it --user root <project_name>-erpnext-python-1 /bin/bash` to login into this container as a root user.
+7. After the `<project_name>-site-creator-1` container display `Scheduler is disabled`,To update some of the files `cd customization` (currently updated; Sales Order, Delivery Stop, Job Card), use this command:
+
+-sales_order file: 
+docker cp erpnext\selling\doctype\sales_order\sales_order.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order
+
+-delivery_stop file:
+docker cp erpnext\stock\doctype\delivery_stop\delivery_stop.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\stock\doctype\delivery_stop
+
+-job_card file:
+docker cp erpnext\manufacturing\doctype\job_card\job_card.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\manufacturing\doctype\job_card
+
+Note: 
+- Replace <project_name> to the same project name as in step 4.
+- For example, docker cp erpnext\selling\doctype\sales_order\sales_order.json project1-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order
+
+8. Now login to `<project_name>-erpnext-python-1` container. Use `docker exec -it --user root <project_name>-erpnext-python-1 /bin/bash` to login into this container as a root user.
     
     Note:
     - Replace `<project_name>` to the same project name selected in step 4.
@@ -135,23 +151,23 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
     - If you face `no such container` error, try with `docker exec -it --user root project1-erpnext-python_1 /bin/bash` or `docker exec -it --user root project1_erpnext-python_1 /bin/bash`.
  
  
-8. Once you login in into `<project_name>-erpnext-python-1` container, by default, you will be in the `~:/home/frappe/frappe-bench/sites` directory. Navigate out to `~:/home/frappe/frappe-bench` directory by typing `cd ..`.
+11. Once you login in into `<project_name>-erpnext-python-1` container, by default, you will be in the `~:/home/frappe/frappe-bench/sites` directory. Navigate out to `~:/home/frappe/frappe-bench` directory by typing `cd ..`.
 
-9. Now, apply the new changes in Frepple app by running this command `bench --site <site_name> migrate`.
+12. Now, apply the new changes in Frepple app by running this command `bench --site <site_name> migrate`.
     
     Note:
     - Replace `<site_name>` to the same name as specified in the .env file. Refer to step 3 and 4.
     - For example, `bench --site custom-erpnext-nginx migrate`
 
-10. After the process `Compiling Python files...` is finished, you will be back in the `~:/home/frappe/frappe-bench` directory. This means the `bench migrate` process is completed. Type `exit` to exit from `<project_name>-erpnext-python-1` container.
+13. After the process `Compiling Python files...` is finished, you will be back in the `~:/home/frappe/frappe-bench` directory. This means the `bench migrate` process is completed. Type `exit` to exit from `<project_name>-erpnext-python-1` container.
 
-11. Now, you can open any browser such as `Google Chrome` and access ERPNext via `http://localhost:<ERPNext_Server_Port>` or `http://<Your_IP_address>:<ERPNext_Server_Port>`.
+14. Now, you can open any browser such as `Google Chrome` and access ERPNext via `http://localhost:<ERPNext_Server_Port>` or `http://<Your_IP_address>:<ERPNext_Server_Port>`.
     
     Note:
     - Type the selected ERPNext port number in `<ERPNext_Server_Port>` selected in step 4. 
     - For example, `http://localhost:8000` or `http://127.0.0.1:8000`.
 
-12. Default credentials.
+15. Default credentials.
     - Username: `Administrator`
     - Password: `admin`
 
