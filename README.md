@@ -132,7 +132,7 @@ In order to utilise the full integration between ERPNext and Frepple, you will n
 
 -sales_order file: `docker cp erpnext\selling\doctype\sales_order\sales_order.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order`
 
--delivery_stop file:`docker cp erpnext\stock\doctype\delivery_stop\delivery_stop.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\stock\doctype\delivery_stop`
+-delivery_stop file - `docker cp erpnext\stock\doctype\delivery_stop\delivery_stop.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\stock\doctype\delivery_stop`
 
 -job_card file:`docker cp erpnext\manufacturing\doctype\job_card\job_card.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\manufacturing\doctype\job_card`
 
