@@ -141,7 +141,8 @@ This is some of the container file path for sales_order, and sales_order_item, d
 
     - job_card file:`docker cp erpnext\manufacturing\doctype\job_card\job_card.json <project_name>-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\manufacturing\doctype\job_card`
 
-    Note: 
+
+   Note: 
     - Replace <project_name> to the same project name as in step 4.
     - Replace <local_file_path> to your local file's path
     - For example, `docker cp erpnext\selling\doctype\sales_order\sales_order.json project1-erpnext-python-1:\home\frappe\frappe-bench\apps\erpnext\erpnext\selling\doctype\sales_order`
