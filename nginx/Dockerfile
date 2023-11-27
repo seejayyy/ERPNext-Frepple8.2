@@ -10,7 +10,6 @@ COPY install_erpnext.sh /install_erpnext
 COPY install_app.sh /install_app
 COPY prepare_production.sh /prepare_production
 
-
 RUN chmod a+x /install_frappe
 RUN chmod a+x /install_erpnext
 RUN chmod a+x /install_app
@@ -24,7 +23,7 @@ RUN /install_frappe ${FRAPPE_BRANCH} && \
   # /install_app <app_name> <repo> <app_branch>
   /install_app metabase_integration https://github.com/${GITHUB_OWNER}/ERPNext-Metabase-Integration master && \
   /install_app erpnext_telegram_integration https://github.com/${GITHUB_OWNER}/ERPNext-Telegram-Integration master && \
-  /install_app frepple https://github.com/seejayyy/ERPNext-Frepple-Enhanced-Integration1.3 main && \
+  /install_app frepple https://github.com/seejayyy/ERPNext-Frepple-Enhanced-Integration-version1.3 main && \
   /install_app sql_accounting_software https://github.com/${GITHUB_OWNER}/ERPNext-SQL-Accounting-Integration main && \
   /install_app barcode_shrdc https://github.com/${GITHUB_OWNER}/ERPNext-Barcode-Integration master && \
   /install_app autocount https://github.com/${GITHUB_OWNER}/ERPNext-Autocount-Integration master && \
